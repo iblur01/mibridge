@@ -1,0 +1,7 @@
+{
+  "region": "eu",
+  "aliases": {
+    "cuiseur": "DEVICE_ID_ICI",
+    "fountain": "DEVICE_ID_ICI"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@mibridge/core",
+  "version": "0.0.2-alpha",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "axios-cookiejar-support": "^4.0.7",
+    "node-mihome": "^0.0.32",
+    "tough-cookie": "^4.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/tough-cookie": "^4.0.0",
+    "vitest": "^1.6.0"
+  }
+}

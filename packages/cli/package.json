@@ -1,0 +1,21 @@
+{
+  "name": "@mibridge/cli",
+  "version": "0.0.2-alpha",
+  "type": "module",
+  "bin": {
+    "mibridge": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^8.2.6",
+    "@mibridge/core": "*"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^20.0.0"
+  }
+}

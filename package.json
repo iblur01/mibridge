@@ -1,24 +1,16 @@
 {
-  "name": "xiaomi-cli",
-  "version": "1.0.0",
-  "description": "CLI pour appareils Xiaomi via MiCloud",
-  "main": "src/cli.js",
-  "bin": {
-    "xiaomi": "./bin/xiaomi.js"
-  },
+  "name": "mibridge-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
   "scripts": {
-    "test": "jest --runInBand",
-    "test:watch": "jest --watch"
-  },
-  "dependencies": {
-    "axios": "^1.6.0",
-    "axios-cookiejar-support": "^4.0.7",
-    "commander": "^11.1.0",
-    "inquirer": "^8.2.6",
-    "node-mihome": "^0.0.32",
-    "tough-cookie": "^4.1.4"
+    "build": "npm run build -ws --if-present",
+    "test": "vitest run --workspace vitest.workspace.ts",
+    "test:watch": "vitest --workspace vitest.workspace.ts",
+    "typecheck": "tsc -b packages/core packages/cli"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   }
 }
