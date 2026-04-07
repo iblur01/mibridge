@@ -1,6 +1,6 @@
 {
   "name": "@mibridge/cli",
-  "version": "0.0.2-alpha",
+  "version": "1.0.0",
   "type": "module",
   "bin": {
     "mibridge": "dist/index.js"
@@ -12,7 +12,7 @@
   "dependencies": {
     "commander": "^11.1.0",
     "inquirer": "^8.2.6",
-    "@mibridge/core": "*"
+    "@mibridge/core": "^1.0.0"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.9",
