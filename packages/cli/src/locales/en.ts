@@ -72,6 +72,28 @@ export const en = {
   'watch.modeChange': '  → cleanMode: {mode}',
   'watch.operationComplete': '  ✓ Operation complete — error: {error}, duration: {duration}s',
   'watch.error': '  ✗ Error: {message}',
+
+  // fountain
+  'fountain.description': 'Manage a Xiaomi smart pet fountain',
+  'fountain.status.description': 'Show the current state of the fountain',
+  'fountain.status.header': '\nFountain status:',
+  'fountain.on.description': 'Turn the pump on',
+  'fountain.on.success': '✓ Pump turned on',
+  'fountain.off.description': 'Turn the pump off',
+  'fountain.off.success': '✓ Pump turned off',
+  'fountain.setMode.description': 'Set distribution mode (continuous|intermittent|sensor)',
+  'fountain.setMode.success': '✓ Mode set to {mode}',
+  'fountain.setMode.invalid': 'Invalid mode: {mode}. Valid: continuous, intermittent, sensor',
+  'fountain.resetFilter.description': 'Reset the filter life counter to 100%',
+  'fountain.resetFilter.success': '✓ Filter counter reset',
+  'fountain.watch.description': 'Monitor fountain state in real time (Ctrl+C to quit)',
+  'fountain.watch.option.interval': 'Polling interval in ms (default: 30000)',
+  'fountain.watch.intro': 'Watching fountain {deviceId} (interval {interval}ms) — Ctrl+C to quit\n',
+  'fountain.watch.status': '[{time}] on={on} mode={mode} battery={battery}% filter={filter}%',
+  'fountain.watch.faultChange': '  ⚠ fault: {fault}',
+  'fountain.watch.waterShortage': '  ⚠ water shortage: {shortage}',
+  'fountain.watch.modeChange': '  → mode: {mode}',
+  'fountain.error': 'Error: {message}',
 } as const
 
 export type TranslationKey = keyof typeof en

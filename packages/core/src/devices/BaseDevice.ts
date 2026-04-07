@@ -1,7 +1,7 @@
 import type { MiConnector } from '../connector/MiConnector.js'
 import type { DeviceInfo } from '../types.js'
 
-export abstract class BaseDevice {
+export class BaseDevice {
   protected connector: MiConnector
   protected deviceInfo: DeviceInfo
   protected deviceId: string
