@@ -101,3 +101,33 @@ export interface DeviceInfo {
   model: string
   name: string
 }
+
+// ─── Fountain distribution mode ───────────────────────────────────────────────
+
+export enum FountainMode {
+  Continuous   = 'continuous',
+  Intermittent = 'intermittent',
+  Sensor       = 'sensor',
+}
+
+// ─── Fountain fault codes (SIID 2, PIID 2) ───────────────────────────────────
+
+export enum FountainFaultCode {
+  None          = 'none',
+  WaterShortage = 'waterShortage',
+  PumpBlocked   = 'pumpBlocked',
+  FilterExpired = 'filterExpired',
+  LidRemoved    = 'lidRemoved',
+}
+
+// ─── Fountain status snapshot ────────────────────────────────────────────────
+
+export interface FountainStatus {
+  on: boolean
+  mode: FountainMode
+  fault: FountainFaultCode
+  waterShortage: boolean
+  filterLifeLeft: number   // % (0–100)
+  filterLeftTime: number   // days remaining
+  batteryLevel: number     // % (0–100)
+}
