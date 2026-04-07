@@ -82,7 +82,7 @@ run('npm', ['install', '--package-lock-only'])
 
 console.log('\n[release] Creating commit and tag...')
 run('git', ['add', '-A'])
-run('git', ['commit', '-m', `chore(release): v${version}\n\nCo-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>`])
+run('git', ['commit', '-m', `chore(release): v${version}`])
 run('git', ['tag', '-a', `v${version}`, '-m', `Release v${version}`])
 
 const branch = runCapture('git', ['branch', '--show-current']) || 'main'
