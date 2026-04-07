@@ -4,6 +4,7 @@ import { DreameVacuum } from '../src/devices/DreameVacuum.js'
 import { PetFountain } from '../src/devices/PetFountain.js'
 import { RiceCooker } from '../src/devices/RiceCooker.js'
 import { BaseDevice } from '../src/devices/BaseDevice.js'
+import { DmakerFan1C } from '../src/devices/DmakerFan1C.js'
 import type { MiConnector } from '../src/connector/MiConnector.js'
 
 const connector = {
@@ -37,6 +38,11 @@ describe('createDevice()', () => {
   test('returns PetFountain for mmgg.pet_waterer.wi11', () => {
     const d = createDevice(connector, { did: '5', model: 'mmgg.pet_waterer.wi11', name: 'Fontaine' })
     expect(d).toBeInstanceOf(PetFountain)
+  })
+
+  test('returns DmakerFan1C for dmaker.fan.1c', () => {
+    const d = createDevice(connector, { did: '7', model: 'dmaker.fan.1c', name: 'Ventilateur' })
+    expect(d).toBeInstanceOf(DmakerFan1C)
   })
 
   test('returns BaseDevice for unknown model', () => {

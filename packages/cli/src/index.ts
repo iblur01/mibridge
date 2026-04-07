@@ -10,6 +10,7 @@ import { register as registerRooms }    from './commands/rooms.js'
 import { register as registerMaps }     from './commands/maps.js'
 import { register as registerWatch }    from './commands/watch.js'
 import { register as registerFountain } from './commands/fountain.js'
+import { register as registerFan }      from './commands/fan.js'
 
 const program = new Command()
 program.name('xiaomi').version('0.1.0')
@@ -24,5 +25,6 @@ registerRooms(program)
 registerMaps(program)
 registerWatch(program)
 registerFountain(program)
+registerFan(program)
 
 program.parse(process.argv)

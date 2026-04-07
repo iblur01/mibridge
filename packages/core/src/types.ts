@@ -131,3 +131,29 @@ export interface FountainStatus {
   filterLeftTime: number   // days remaining
   batteryLevel: number     // % (0–100)
 }
+
+// ─── Fan mode ────────────────────────────────────────────────────────────────
+
+export enum FanMode {
+  Straight = 'straight',  // 0 — vent direct
+  Sleep    = 'sleep',     // 1 — mode nuit
+}
+
+// ─── Fan speed — union discriminée pour supporter niveaux discrets et % ──────
+
+export type FanSpeed =
+  | { type: 'level';   value: number }   // ex. 1|2|3 pour dmaker.fan.1c
+  | { type: 'percent'; value: number }   // 0–100 pour futurs modèles
+
+// ─── Fan status snapshot ─────────────────────────────────────────────────────
+
+export interface FanStatus {
+  on:            boolean
+  speed:         FanSpeed
+  mode:          FanMode
+  oscillating:   boolean
+  timerMinutes:  number    // 0 = pas de timer actif
+  buzzer:        boolean
+  led:           boolean
+  locked:        boolean
+}

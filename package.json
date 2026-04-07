@@ -7,7 +7,8 @@
     "build": "npm run build -ws --if-present",
     "test": "vitest run --workspace vitest.workspace.ts",
     "test:watch": "vitest --workspace vitest.workspace.ts",
-    "typecheck": "tsc -b packages/core packages/cli"
+    "typecheck": "tsc -b packages/core packages/cli",
+    "release:automate": "node ./scripts/release.mjs"
   },
   "devDependencies": {
     "typescript": "^5.4.0",
