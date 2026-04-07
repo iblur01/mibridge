@@ -54,6 +54,11 @@ if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(version)) {
   fail(`Invalid semver version "${version}"`)
 }
 
+const currentBranch = runCapture('git', ['branch', '--show-current'])
+if (currentBranch !== 'main') {
+  fail(`Releases must be made from main (current branch: ${currentBranch})`)
+}
+
 const gitStatus = runCapture('git', ['status', '--porcelain'])
 if (gitStatus) {
   fail('Working tree is not clean. Commit/stash changes before releasing.')
@@ -85,11 +90,9 @@ run('git', ['add', '-A'])
 run('git', ['commit', '-m', `chore(release): v${version}`])
 run('git', ['tag', '-a', `v${version}`, '-m', `Release v${version}`])
 
-const branch = runCapture('git', ['branch', '--show-current']) || 'main'
-
 if (shouldPush) {
   console.log('\n[release] Pushing branch and tag...')
-  run('git', ['push', 'origin', branch])
+  run('git', ['push', 'origin', currentBranch])
   run('git', ['push', 'origin', `v${version}`])
 }
 
