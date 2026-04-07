@@ -135,15 +135,15 @@ export interface FountainStatus {
 // ─── Fan mode ────────────────────────────────────────────────────────────────
 
 export enum FanMode {
-  Straight = 'straight',  // 0 — vent direct
-  Sleep    = 'sleep',     // 1 — mode nuit
+  Straight = 'straight',  // 0 — straight wind
+  Sleep    = 'sleep',     // 1 — sleep / night mode
 }
 
-// ─── Fan speed — union discriminée pour supporter niveaux discrets et % ──────
+// ─── Fan speed — discriminated union supporting discrete levels and percent ───
 
 export type FanSpeed =
-  | { type: 'level';   value: number }   // ex. 1|2|3 pour dmaker.fan.1c
-  | { type: 'percent'; value: number }   // 0–100 pour futurs modèles
+  | { type: 'level';   value: number }   // e.g. 1|2|3 for dmaker.fan.1c
+  | { type: 'percent'; value: number }   // 0–100 for future continuous-speed models
 
 // ─── Fan status snapshot ─────────────────────────────────────────────────────
 

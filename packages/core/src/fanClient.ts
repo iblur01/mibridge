@@ -37,7 +37,11 @@ export class FanClient extends EventEmitter {
     const devices = await this.connector.getDevices()
     const deviceInfo = devices.find((d: DeviceInfo) => String(d.did) === String(this.deviceId))
     if (!deviceInfo) throw new Error(`Device ${this.deviceId} not found`)
-    this.device = createDevice(this.connector, deviceInfo) as BaseFan
+    const device = createDevice(this.connector, deviceInfo)
+    if (!('setSpeed' in device && 'setOscillating' in device)) {
+      throw new Error(`Device ${this.deviceId} (${deviceInfo.model}) is not a supported fan`)
+    }
+    this.device = device as BaseFan
     this._connected = true
     this.emit('connected')
     this._startPolling()

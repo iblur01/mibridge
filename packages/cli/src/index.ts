@@ -1,5 +1,8 @@
 #!/usr/bin/env node
+import { createRequire } from 'node:module'
 import { Command } from 'commander'
+
+const { version } = createRequire(import.meta.url)('../package.json') as { version: string }
 import { register as registerLogin }    from './commands/login.js'
 import { register as registerLogout }   from './commands/logout.js'
 import { register as registerDevices }  from './commands/devices.js'
@@ -13,7 +16,7 @@ import { register as registerFountain } from './commands/fountain.js'
 import { register as registerFan }      from './commands/fan.js'
 
 const program = new Command()
-program.name('xiaomi').version('0.1.0')
+program.name('xiaomi').version(version)
 
 registerLogin(program)
 registerLogout(program)
