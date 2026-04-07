@@ -1,6 +1,23 @@
 # Changelog
 
-## [0.0.3-alpha] — unreleased
+## [1.0.2] — unreleased
+
+### Added
+
+- **Smart Fan support** — architecture extensible pour les ventilateurs Xiaomi, avec `BaseFan` (classe abstraite normalisée) et `DmakerFan1C` comme première implémentation concrète
+  - `DmakerFan1C` : mapping MIoT complet pour `dmaker.fan.1c` — on/off, vitesse (niveaux 1–3), oscillation, mode, timer arrêt, bip sonore, LED, verrouillage physique
+  - `FanClient` : EventEmitter avec polling (10 s), événements `statusChange`, `modeChange`, `speedChange`, `oscillationChange`, `error`
+  - Modes : `straight` (vent direct), `sleep` (mode nuit)
+  - Type `FanSpeed` discriminé (`level` | `percent`) — prêt pour les futurs modèles à vitesse continue (0–100 %)
+- **CLI** — groupe de commandes `fan` : `status`, `on`, `off`, `toggle`, `set-speed`, `set-mode`, `oscillate`, `set-timer`, `set-buzzer`, `set-led`, `set-lock`, `watch`
+
+### Changed
+
+- Script de release : garde-fou — la release est bloquée si la branche courante n'est pas `main`
+
+---
+
+## [1.0.0] — 2026-04-07
 
 ### Added
 

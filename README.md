@@ -124,6 +124,21 @@ npm run build       # build all packages
 npm test            # run tests
 ```
 
+Release automation:
+
+```bash
+# stable release
+npm run release:automate -- --version 1.0.0
+
+# prerelease/tagged release
+npm run release:automate -- --version 1.1.0-alpha.0 --tag alpha
+```
+
+Useful options:
+- `--dry-run` (show commands only)
+- `--no-push` (skip git push)
+- `--no-publish` (skip npm publish)
+
 TypeScript, ES2022, NodeNext module resolution.
 
 ## Contributing
