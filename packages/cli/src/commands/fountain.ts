@@ -31,7 +31,8 @@ export function register(program: Command): void {
           if (key === 'filterLifeLeft' && typeof val === 'number') {
             displayVal = `${val}%`
           } else if (key === 'filterLeftTime' && typeof val === 'number') {
-            displayVal = `${val} day${val === 1 ? '' : 's'}`
+            const dayKey = val === 1 ? 'fountain.status.unit.day' : 'fountain.status.unit.days'
+            displayVal = `${val} ${t(dayKey)}`
           }
           console.log(`  ${key.padEnd(20)}: ${displayVal}`)
         }

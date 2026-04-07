@@ -11,7 +11,7 @@ vi.mock('../src/devices/PetFountain.js', () => ({
       waterShortage: false,
       mode: FountainMode.Sensor,
       filterLifeLeft: 80,
-      filterLeftTime: 720,
+      filterLeftTime: 30,
       batteryLevel: 65,
     } satisfies FountainStatus),
     doAction: vi.fn().mockResolvedValue(undefined),
@@ -118,7 +118,7 @@ describe('PetFountainClient', () => {
       waterShortage: true,
       mode: FountainMode.Sensor,
       filterLifeLeft: 80,
-      filterLeftTime: 720,
+      filterLeftTime: 30,
       batteryLevel: 65,
     })
     await vi.advanceTimersByTimeAsync(1100)
@@ -137,7 +137,7 @@ describe('PetFountainClient', () => {
       waterShortage: true,
       mode: FountainMode.Sensor,
       filterLifeLeft: 80,
-      filterLeftTime: 720,
+      filterLeftTime: 30,
       batteryLevel: 60,
     })
     await vi.advanceTimersByTimeAsync(1100)

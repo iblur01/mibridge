@@ -77,6 +77,8 @@ export const en = {
   'fountain.description': 'Manage a Xiaomi smart pet fountain',
   'fountain.status.description': 'Show the current state of the fountain',
   'fountain.status.header': '\nFountain status:',
+  'fountain.status.unit.day': 'day',
+  'fountain.status.unit.days': 'days',
   'fountain.on.description': 'Turn the pump on',
   'fountain.on.success': '✓ Pump turned on',
   'fountain.off.description': 'Turn the pump off',

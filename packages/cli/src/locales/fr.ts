@@ -77,6 +77,8 @@ export const fr = {
   'fountain.description': 'Gérer une fontaine à eau connectée Xiaomi',
   'fountain.status.description': "Afficher l'état actuel de la fontaine",
   'fountain.status.header': '\nÉtat de la fontaine:',
+  'fountain.status.unit.day': 'jour',
+  'fountain.status.unit.days': 'jours',
   'fountain.on.description': 'Allumer la pompe',
   'fountain.on.success': '✓ Pompe allumée',
   'fountain.off.description': 'Éteindre la pompe',

@@ -60,7 +60,7 @@ export class PetFountain extends BaseDevice {
       on:             Boolean(v(P.on)),
       fault:          FAULT_MAP[(v(P.fault) as number) ?? 0] ?? FountainFaultCode.None,
       waterShortage:  Boolean(v(P.water_shortage)),
-      mode:           MODE_MAP[(v(P.mode) as number) ?? 2] ?? FountainMode.Sensor,
+      mode:           MODE_MAP[Number(v(P.mode))] ?? FountainMode.Sensor,
       filterLifeLeft: (v(P.filter_life_left) as number) ?? 0,
       filterLeftTime: (v(P.filter_left_time) as number) ?? 0,
       batteryLevel:   (v(P.battery_level) as number) ?? 0,

@@ -128,6 +128,6 @@ export interface FountainStatus {
   fault: FountainFaultCode
   waterShortage: boolean
   filterLifeLeft: number   // % (0–100)
-  filterLeftTime: number   // hours remaining
+  filterLeftTime: number   // days remaining
   batteryLevel: number     // % (0–100)
 }
