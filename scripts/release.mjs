@@ -54,8 +54,9 @@ if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(version)) {
   fail(`Invalid semver version "${version}"`)
 }
 
+const currentBranch = runCapture('git', ['branch', '--show-current'])
+
 if (!dryRun) {
-  const currentBranch = runCapture('git', ['branch', '--show-current'])
   if (currentBranch !== 'main') {
     fail(`Releases must be made from main (current branch: ${currentBranch})`)
   }
